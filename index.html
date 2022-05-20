@@ -1,0 +1,82 @@
+<!doctype HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="author" content="Maycon e Marcus"/>
+		<title>Nice Quiz 2.0</title>
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+		<link rel="shortcut icon" href="quiz.png" type="image/x-icon">
+	</head>
+	<body>
+		<script>
+			function acertou(x)
+			{
+				alert("PARABÉNS \nVocê acertou !!!");
+				document.getElementById(x).style.color="rgb(30,125,30)";
+				
+			}
+			function ganhou(x)
+			{
+				alert("PARABÉNS \n\nVocê acabou de ser o campeão do Nice Quiz 2.0.\n\n Programado por Marcus e Maycon!");
+				document.getElementById(x).style.color="rgb(30,125,30)";
+				
+			}
+			function errou(x)
+			{
+				alert("que pena :( \nVocê errou!!!");
+				document.getElementById(x).style.color="rgb(200,30,30)";
+			}
+			function aparecer(x)
+			{
+				var resposta = document.getElementById(x);
+				if(resposta.className.indexOf("visivel")==-1)
+					resposta.className = resposta.className.replace("escondido","visivel");
+			}
+
+		</script>
+		<br>
+		<br>
+		<ol id="quiz"> Nice Quiz<img src="quiz.png">
+			<li id="quest1">Quais o menor e o maior país do mundo?
+				<ol class="resp">
+					<li id="r1" onclick="acertou('r1'), aparecer('quest2')">Vaticano e Rússia</li>
+					<li id="r2" onclick="errou('r2')">Nauru e China</li>
+					<li id="r3" onclick="errou('r3')">Mônaco e Canadá</li>
+					<li id="r4" onclick="errou('r4')">Malta e Estados Unidos</li>
+				</ol>
+			</li>
+			<li id="quest2" class="escondido">Qual o maior animal do mundo ?
+				<ol class="resp">
+					<li id="r5" onclick="errou('r5')">Loxodonta africana (elefante-africano-da-savana)</li>
+					<li id="r6" onclick="errou('r6')">Giraffa camelopardalis (Girafa-masai)</li>
+					<li id="r7" onclick="acertou('r7'), aparecer('quest3')">Balaenoptera musculus (baleia-azul)</li>
+					<li id="r8" onclick="errou('r8')">Tapirus terrestris (anta-brasileira)</li>
+				</ol>
+			</li>
+			<li id="quest3" class="escondido">Quantos países tem na América do Sul ?
+				<ol class="resp">
+					<li id="r9" onclick="errou('r9')">09</li>
+					<li id="r10" onclick="errou('r10')">10</li>
+					<li id="r11" onclick="errou('r11')">13</li>
+					<li id="r12" onclick="acertou('r12'), aparecer('quest4')">12</li>
+				</ol>
+			</li>
+			<li  id="quest4" class="escondido">Em que ano os filmes deixaram  de ser preto e branco ?
+				<ol class="resp">
+					<li id="r13" onclick="errou('r13')">1950</li>
+					<li id="r14" onclick="acertou('r14'),aparecer('quest5')">1960</li>
+					<li id="r15" onclick="errou('r15')">1970</li>
+					<li id="r16" onclick="errou('r16')">1945</li>
+				</ol>
+			</li>
+			<li  id="quest5" class="escondido">Qual o grupo em que todas as palavras foram escritas corretamente?
+				<ol class="resp">
+					<li id="r17" onclick="errou('r17')">Asterístico, beneficiente, metereologia, entretido</li>
+					<li id="r18" onclick="errou('r18')">Asterístico, beneficiente, meteorologia, entertido</li>
+					<li id="r19" onclick="errou('r19')">Asterisco, beneficiente, metereologia, entretido</li>
+					<li id="r20" onclick="ganhou('r20')">Asterisco, beneficente, meteorologia, entretido</li>
+				</ol>
+			</li>
+		</ol>
+	</body>
+</html>
